@@ -1,0 +1,12 @@
+info:
+  title: Bucket Creation
+  author: Joe Pearson
+  description: Creates a single bucket for future IO data.
+
+required:
+- name
+
+properties:
+  name:
+    type: string
+    description: name for the bucket to use with a random string that is generated within the bucket.py file

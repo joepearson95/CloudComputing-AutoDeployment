@@ -1,0 +1,12 @@
+info:
+  title: Cloud SQL Creation
+  author: Joe Pearson
+  description: Creates a single Cloud SQL instance
+
+required:
+- name
+
+properties:
+  name:
+    type: string
+    description: name for the creation of the Cloud SQL instance

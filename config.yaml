@@ -1,0 +1,49 @@
+# Copyright 2016 Google Inc. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# Adapted from the following:
+#    https://cloud.google.com/deployment-manager/docs/step-by-step-guide/setting-metadata-and-startup-scripts
+imports:
+- path: load-balanced-regional-instances.py
+- path: cloudsql.jinja
+- path: bucket.py
+resources:
+-   name: the-first-vm
+    type: load-balanced-regional-instances.py
+    properties:
+        machineType: n1-standard-1
+        region: us-east1
+        zone: us-east1-a
+        network: custom_network
+        targetSize: 3
+-   name: the-second-vm
+    type: load-balanced-regional-instances.py
+    properties:
+        machineType: n1-standard-1
+        region: us-central1
+        zone: us-central1-b
+        network: custom_network
+        targetSize: 3
+# -   name: cloudsql
+#     type: cloudsql.jinja
+#     properties:
+#         tier: D1
+# -   name: bucket
+#     type: bucket.py
+#     properties:
+#         name: bucket
+#         location: us-east1
+#         versioning:
+#             enabled: True
+#         labels:
+#             env: development

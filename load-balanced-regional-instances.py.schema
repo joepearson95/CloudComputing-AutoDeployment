@@ -1,0 +1,27 @@
+info:
+  title: Load balanced regional instances
+  author: Joe Pearson
+  description: Creates a regional instance group manager that utilises vm-templates before creating an external load balancer for said instances.
+
+required:
+- zone
+- region
+- targetSize
+- machineType
+- network
+properties:
+  region:
+    type: string
+    description: Region that the IGM is within 
+  zone:
+    type: string
+    description: Zone that the IGM is within
+  targetSize:
+    type: number
+    description: Number of instances that will be created within the IGM
+  machineType:
+    type: string
+    description: The specified type of machine OS that this will be. I.e. Linux Debian/Ubuntu
+  network:
+    type: string
+    description: The network that the network interface uses alongside the COMPUTE_URL_BASE
