@@ -1,6 +1,7 @@
 # Function that will generate an external load balancer and use this with the regional instances
 # created by a regional instance group manager
-# Adapted from the following:  https://cloud.google.com/deployment-manager/docs/create-advanced-http-load-balanced-deployment
+# Adapted from the following:  https://cloud.google.com/load-balancing/docs/https/setting-up-https
+
 COMPUTE_URL_BASE = 'https://www.googleapis.com/compute/v1/'
 
 
